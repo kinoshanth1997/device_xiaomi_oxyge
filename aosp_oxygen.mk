@@ -22,11 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/oxygen/device.mk)
 
 # Inherit some common aosp  stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := arrow_oxygen
+PRODUCT_NAME := aosp_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
@@ -41,3 +41,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "Xiaomi/oxygen/oxygen:7.1.1/NMF26F/8.11.8:user/release-keys"
 
+# Gapps
+GAPPS_VARIANT := full
+TARGET_GAPPS_ARCH := arm64
+CUSTOM_BUILD_TYPE := UNOFFICIAL
+
+# Animation Bootanimation res
+TARGET_BOOT_ANIMATION_RES := 1080
