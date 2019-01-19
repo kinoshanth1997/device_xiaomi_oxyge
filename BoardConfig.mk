@@ -38,10 +38,13 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 872415232
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(DEVICE_PATH)/cmhw
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/enable_dt2w"
+#BOARD_HARDWARE_CLASS += \
+#    hardware/cyanogen/cmhw \
+#    $(DEVICE_PATH)/cmhw
+#TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/enable_dt2w"
+
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input2/wake_gesture"
 
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
